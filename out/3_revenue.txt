@@ -1,0 +1,9 @@
+Doanh thu cao nhất:
+2781505847	Avatar
+
+Số phim không có dữ liệu doanh thu:
+6016
+
+Doanh thu thấp nhất sau khi bỏ những những phim thiếu giá trị dữ liệu:
+2	Shattered Glass
+2	Mallrats
