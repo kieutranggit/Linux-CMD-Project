@@ -155,7 +155,7 @@ tail -n +2 clean_data.tsv | head -3 | awk -F'\t' '{printf "%.0f\t%s\n", $5-$4, $
 tail -n +2 clean_data.tsv | awk -F'\t' '{printf "%.0f\t%s\n", $5-$4, $6}' | sort -t$'\t' -k1,1nr | head -10
 
 # Ghi kết quả vào out/5_top10_profit.txt
-echo "Top 10 phim có doanh thu cao nhất:" > out/5_top10_profit.txt
+echo "Top 10 phim có lợi nhuận cao nhất:" > out/5_top10_profit.txt
 tail -n +2 clean_data.tsv | awk -F'\t' '{printf "%.0f\t%s\n", $5-$4, $6}' | sort -t$'\t' -k1,1nr | head -10 >> out/5_top10_profit.txt
 cat out/5_top10_profit.txt
 
