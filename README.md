@@ -22,7 +22,7 @@ bash cmd.sh
 
 Cần có `python3` (cho bước làm sạch) và các lệnh Linux thông thường.
 
-## 3. Bước 0: Làm sạch dữ liệu
+## 3. Làm sạch dữ liệu
 
 **Vấn đề.** Không thể dùng ngay file CSV với `awk`, `cut`, `sort`, vì:
 
