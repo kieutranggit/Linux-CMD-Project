@@ -81,12 +81,7 @@ Các cột được dùng trong bài: 4 `budget`, 5 `revenue`, 6 `original_title
 
 Sau khi hoàn thành các yêu cầu, mình kiểm tra lại chất lượng dữ liệu và ghi nhận:
 
-- **Có 1 dòng bị trùng.** Phim *TEKKEN* (2010, `id = 42194`) xuất hiện 2 lần với nội dung giống hệt, nên thực tế có 10.865 phim khác nhau chứ không phải 10.866. Dòng trùng này làm file sắp xếp (yêu cầu 1) có thêm 1 dòng, tổng doanh thu (yêu cầu 4) dư 967.000 USD và số phim của các thể loại Crime, Drama, Action, Thriller, Science Fiction (yêu cầu 7) dư 1 mỗi thể loại. Các yêu cầu 2, 3, 5, 6 không bị ảnh hưởng. Kết quả trong `out/` hiện **chưa loại dòng trùng này**.
+- **Có 1 dòng bị trùng.** Phim *TEKKEN* (2010, `id = 42194`) xuất hiện 2 lần với nội dung giống hệt, nên thực tế có 10.865 phim khác nhau chứ không phải 10.866. Dòng trùng này làm file sắp xếp (yêu cầu 1) có thêm 1 dòng, tổng doanh thu (yêu cầu 4) dư 967.000 USD và số phim của các thể loại Crime, Drama, Action, Thriller, Science Fiction (yêu cầu 7) dư 1 mỗi thể loại. Các yêu cầu 2, 3, 5, 6 không bị ảnh hưởng. **Quyết định:** mình giữ nguyên dòng trùng và không chạy lại, vì ảnh hưởng rất nhỏ (967.000 USD trên tổng 432,7 tỷ USD, khoảng 0,0002%) và không làm thay đổi bất kỳ kết luận nào ở trên. Vì vậy kết quả trong `out/` **chưa loại dòng trùng này**.
 - **Nhiều giá trị 0 là dữ liệu thiếu.** 5.696 phim có `budget = 0` và 6.016 phim có `revenue = 0`. Khi tính lợi nhuận (yêu cầu 5), các phim này chưa được loại; tuy vậy top 10 không bị ảnh hưởng vì top 10 đều có đủ dữ liệu.
 - **Có dữ liệu đáng ngờ.** Phim *The Net* (1995) có lợi nhuận hơn 1 tỷ USD, rất bất thường, nhiều khả năng là lỗi trong dữ liệu gốc.
 - **Hai phim có thể trùng tên nhưng khác nhau.** Ví dụ *Emma* (1996) và *Joan of Arc* (1999) xuất hiện 2 lần nhưng có `id` và đạo diễn khác nhau, nên đây là các phim khác nhau, không phải trùng lặp.
-
-## 6. Việc còn lại
-
-- Xử lý dòng trùng (*TEKKEN*) và chạy lại các yêu cầu bị ảnh hưởng (1, 4 và 7).
-- Yêu cầu 8 (tự đề xuất thêm các phân tích khác) chưa thực hiện.
